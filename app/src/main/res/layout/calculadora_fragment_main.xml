@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView_resultado"
             android:minWidth="10dp"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:padding="10dp"
-            android:textSize="50dp"
+            android:textSize="50sp"
             android:textAlignment="textEnd"
             android:gravity="bottom"
             android:textColor="@color/black"
@@ -24,11 +24,11 @@
             android:text="Resultado" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView_conta"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:padding="10dp"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textAlignment="textEnd"
             android:gravity="bottom"
             android:textColor="@color/black"
@@ -50,10 +50,10 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_porcentagem"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -61,10 +61,10 @@
                 android:text="%" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button_parenteses_esquerdo"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -72,10 +72,10 @@
                 android:text="(" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_parenteses_direito"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -83,14 +83,14 @@
                 android:text=")" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button_divisao"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="22sp"
-                android:text="%" />
+                android:text="/" />
         </LinearLayout>
 
         <LinearLayout
@@ -98,10 +98,10 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/button_numero_sete"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -109,10 +109,10 @@
                 android:text="7" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/button_numero_oito"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -120,10 +120,10 @@
                 android:text="8" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/button_numero_nove"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -131,9 +131,10 @@
                 android:text="9" />
 
             <Button
+                android:id="@+id/button_multiplicacao"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="22sp"
@@ -145,10 +146,10 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/button_numero_quatro"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -156,10 +157,10 @@
                 android:text="4" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/button_numero_cinco"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -167,10 +168,10 @@
                 android:text="5" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/button_numero_seis"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -178,10 +179,10 @@
                 android:text="6" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/button_subtracao"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="22sp"
@@ -193,10 +194,10 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/button_numero_um"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -204,10 +205,10 @@
                 android:text="1" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/button_numero_dois"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -215,10 +216,10 @@
                 android:text="2" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/button_numero_tres"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -226,10 +227,10 @@
                 android:text="3" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/button_adicao"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="22sp"
@@ -241,10 +242,10 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/button_numero_zero"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -252,10 +253,10 @@
                 android:text="0" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/button_ponto"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -263,10 +264,10 @@
                 android:text="." />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/button_numero_apagar"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsWhite"
                 android:textStyle="bold"
@@ -274,10 +275,10 @@
                 android:text="DEL" />
 
             <Button
-                android:id="@+id/button20"
+                android:id="@+id/button_igual"
                 android:layout_width="94dp"
                 android:layout_height="80dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/equalSign"
                 android:textStyle="bold"
