@@ -89,7 +89,7 @@
                 android:textColor="@color/black"
                 android:backgroundTint="@color/operatorsBlue"
                 android:id="@+id/button_divide"
-                android:text="/" />
+                android:text="÷" />
 
         </LinearLayout>
         <LinearLayout

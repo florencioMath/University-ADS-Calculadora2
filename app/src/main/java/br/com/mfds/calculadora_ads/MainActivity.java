@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String buttonText = button.getText().toString();
         String dataToCalculate = solutionTv.getText().toString();
 
+        buttonText = buttonText.replace("%", "/100");
+        buttonText = buttonText.replace("÷", "/");
+
         if(buttonText.equals("AC")){
             solutionTv.setText("");
             resultTv.setText("0");
