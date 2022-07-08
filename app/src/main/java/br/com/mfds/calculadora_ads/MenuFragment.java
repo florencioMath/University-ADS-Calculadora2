@@ -1,5 +1,6 @@
 package br.com.mfds.calculadora_ads;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -40,7 +41,16 @@ public class MenuFragment extends Fragment {
         switch (item.getItemId()) {
           case R.id.menu_historico:
             Toast.makeText(getActivity(), "Histórico", Toast.LENGTH_LONG).show();
+              Intent intent = new Intent(this.getActivity(), HistoricoActivity.class);
+              this.startActivity(intent);
             break;
+        };
+        switch (item.getItemId()) {
+            case R.id.menu_calculadora:
+                Toast.makeText(getActivity(), "Calculadora", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this.getActivity(), MainActivity.class);
+                this.startActivity(intent);
+                break;
         };
     return super.onOptionsItemSelected(item);
     }

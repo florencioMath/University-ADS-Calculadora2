@@ -3,5 +3,7 @@
     <item
         android:id="@+id/menu_historico"
         android:title="@string/historico" />
-
+    <item
+        android:id="@+id/menu_calculadora"
+        android:title="Calculadora" />
 </menu>
