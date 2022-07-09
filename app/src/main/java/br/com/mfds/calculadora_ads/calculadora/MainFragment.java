@@ -7,19 +7,20 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.commons.lang3.StringUtils;
 import br.com.mfds.calculadora_ads.R;
+import br.com.mfds.calculadora_ads.database.DatabaseHelper;
 
 public class MainFragment extends Fragment {
 
     private EditText etResult;
     private EditText etOperation;
     private StringBuilder operation = new StringBuilder();
+    private DatabaseHelper dbHelper;
 
     public MainFragment() {
         // Required empty public constructor
@@ -118,7 +119,8 @@ public class MainFragment extends Fragment {
         btnResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dbHelper = new DatabaseHelper(getActivity());
+                dbHelper.insert(operation.toString(), etOperation.getText().toString());
                 etResult.setText(etOperation.getText().toString());
                 operation = new StringBuilder();
                 etOperation.setText("");

@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import br.com.mfds.calculadora_ads.historico.MainFragment;
+
 
 public class MenuFragment extends Fragment {
 
@@ -41,8 +43,7 @@ public class MenuFragment extends Fragment {
         switch (item.getItemId()) {
           case R.id.menu_historico:
             Toast.makeText(getActivity(), "Histórico", Toast.LENGTH_LONG).show();
-              Intent intent = new Intent(this.getActivity(), HistoricoActivity.class);
-              this.startActivity(intent);
+             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainFragment()).commit();
             break;
         };
         switch (item.getItemId()) {
