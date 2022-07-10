@@ -7,9 +7,18 @@
     android:orientation="vertical"
     tools:context=".historico.MainFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="12pt"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="@string/historico"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="660dp">
+        android:layout_height="630dp">
 
         <ListView
             android:id="@+id/list_view_history"
@@ -30,9 +39,10 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:textStyle="bold"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:backgroundTint="#B71C1C"
-            android:text="Excluir Histórico" />
+            android:text="@string/limpar_historico" />
     </LinearLayout>
 
 </LinearLayout>
