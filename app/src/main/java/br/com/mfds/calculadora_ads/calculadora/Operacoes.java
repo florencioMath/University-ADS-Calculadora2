@@ -120,7 +120,7 @@ public class Operacoes {
         if ((result*10)/10 == Double.parseDouble(Long.toString(Math.round(result)))) {
             strResult = Long.toString(Math.round(result));
             if (strResult.length() > 11)
-                Toast.makeText(context, "Digite um número de até 11 digitos..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Digite um número de até 11 digitos.", Toast.LENGTH_SHORT).show();
         } else {
             strResult = Double.toString(result);
         }

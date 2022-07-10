@@ -63,6 +63,9 @@ public class MainFragment extends Fragment {
         btnPorcentagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(etOperation.length() < 1) {
+                    Toast.makeText(getActivity(), "Digite um valor primeiro.", Toast.LENGTH_SHORT).show();
+                }
                 if(etOperation.length() != 0) {
                     operation.append(btnPorcentagem.getText());
                     etResult.setText(operation.toString());
@@ -97,8 +100,13 @@ public class MainFragment extends Fragment {
         btnDivisao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnDivisao.getText());
-                etResult.setText(operation.toString());
+                if(etOperation.length() < 1) {
+                    Toast.makeText(getActivity(), "Digite um valor primeiro.", Toast.LENGTH_SHORT).show();
+                }
+                if(etOperation.length() != 0) {
+                    operation.append(btnDivisao.getText());
+                    etResult.setText(operation.toString());
+                }
             }
         });
 
@@ -106,8 +114,13 @@ public class MainFragment extends Fragment {
         btnMultiplicacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnMultiplicacao.getText());
-                etResult.setText(operation.toString());
+                if(etOperation.length() < 1) {
+                    Toast.makeText(getActivity(), "Digite um valor primeiro.", Toast.LENGTH_SHORT).show();
+                }
+                if(etOperation.length() != 0) {
+                    operation.append(btnMultiplicacao.getText());
+                    etResult.setText(operation.toString());
+                }
             }
         });
 
@@ -115,8 +128,13 @@ public class MainFragment extends Fragment {
         btnSubtracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnSubtracao.getText());
-                etResult.setText(operation.toString());
+                if(etOperation.length() < 1) {
+                    Toast.makeText(getActivity(), "Digite um valor primeiro.", Toast.LENGTH_SHORT).show();
+                }
+                if(etOperation.length() != 0) {
+                    operation.append(btnSubtracao.getText());
+                    etResult.setText(operation.toString());
+                }
             }
         });
 
@@ -124,8 +142,13 @@ public class MainFragment extends Fragment {
         btnAdicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnAdicao.getText());
-                etResult.setText(operation.toString());
+                if(etOperation.length() < 1) {
+                    Toast.makeText(getActivity(), "Digite um valor primeiro.", Toast.LENGTH_SHORT).show();
+                }
+                if(etOperation.length() != 0) {
+                    operation.append(btnAdicao.getText());
+                    etResult.setText(operation.toString());
+                }
             }
         });
 
@@ -133,6 +156,9 @@ public class MainFragment extends Fragment {
         btnResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(etOperation.length() < 1) {
+                    Toast.makeText(getActivity(), "Sem nenhuma operação para calcular.", Toast.LENGTH_SHORT).show();
+                }
                 if(etResult.length() > 0 && etOperation.length() > 0) {
                     dbHelper = new DatabaseHelper(getActivity());
                     dbHelper.insert(operation.toString(), etOperation.getText().toString());
@@ -153,6 +179,7 @@ public class MainFragment extends Fragment {
                 }
                 if(operation.length() < 1) {
                     etOperation.setText("");
+                    Toast.makeText(getActivity(), "Nada para apagar, digite um valor.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
