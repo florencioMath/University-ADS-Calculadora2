@@ -12,7 +12,7 @@ import br.com.mfds.calculadora_ads.R;
 
 public class DatabaseHelper  extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "calculadora";
-    private static final int VERSAO_BANCO = 2;
+    private static final int VERSAO_BANCO = 1;
     private static final String TABLE_NAME = "calculadora";
 
     private static final String CREATE_TABLE = "CREATE TABLE " +TABLE_NAME+ "(_id INTEGER PRIMARY KEY AUTOINCREMENT, " + //
@@ -52,6 +52,11 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(context, R.layout.item_historico, data, columns, to, 0);
         lv.setAdapter(simpleCursorAdapter);
         db.close();
+    }
 
+    public void delete() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.delete(TABLE_NAME, null, null);
+        db.close();
     }
 }

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ public class MainFragment extends Fragment {
     private EditText etOperation;
     private StringBuilder operation = new StringBuilder();
     private DatabaseHelper dbHelper;
+
 
     public MainFragment() {
         // Required empty public constructor
