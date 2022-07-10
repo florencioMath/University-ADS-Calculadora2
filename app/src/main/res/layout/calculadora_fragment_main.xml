@@ -19,6 +19,7 @@
             android:textSize="54sp"
             android:text=""
             android:focusable="false"
+            android:textColor="@color/black"
             android:background="@color/resultAndDigit"
             android:paddingHorizontal="15dp"
             android:gravity="bottom|end"/>
@@ -29,6 +30,7 @@
             android:layout_weight="0.1"
             android:text=""
             android:focusable="false"
+            android:textColor="@color/black"
             android:background="@color/resultAndDigit"
             android:textSize="32sp"
             android:paddingHorizontal="15dp"

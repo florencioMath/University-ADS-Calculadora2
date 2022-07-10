@@ -152,7 +152,7 @@ public class MainFragment extends Fragment {
                     etResult.setText(operation.toString());
                 }
                 if(operation.length() < 1) {
-                    etOperation.setText("0");
+                    etOperation.setText("");
                 }
             }
         });
