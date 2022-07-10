@@ -36,94 +36,106 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.calculadora_fragment_main, container, false);
 
-        etResult = v.findViewById(R.id.textViewResultDisplay);
-        etOperation = v.findViewById(R.id.textViewOperationDisplay);
+        etResult = v.findViewById(R.id.textView_resultado_display);
+        etOperation = v.findViewById(R.id.textView_expressao_display);
 
-        TextView btnPercent = v.findViewById(R.id.percentButton);
-        TextView btnOpenParenthesis = v.findViewById(R.id.openParenthesisButton);
-        TextView btnCloseParenthesis = v.findViewById(R.id.closeParenthesisButton);
-        TextView btnDivision = v.findViewById(R.id.divisionButton);
-        TextView btnMultiplication = v.findViewById(R.id.multiplicationButton);
-        TextView btnSubtraction = v.findViewById(R.id.subtractionButton);
-        TextView btnAddition = v.findViewById(R.id.additionButton);
-        TextView btnResult = v.findViewById(R.id.resultButton);
-        TextView btnZero = v.findViewById(R.id.zeroButton);
-        TextView btnOne = v.findViewById(R.id.oneButton);
-        TextView btnTwo = v.findViewById(R.id.twoButton);
-        TextView btnThree = v.findViewById(R.id.threeButton);
-        TextView btnFour = v.findViewById(R.id.fourButton);
-        TextView btnFive = v.findViewById(R.id.fiveButton);
-        TextView btnSix = v.findViewById(R.id.sixButton);
-        TextView btnSeven = v.findViewById(R.id.sevenButton);
-        TextView btnEight = v.findViewById(R.id.eightButton);
-        TextView btnNine = v.findViewById(R.id.nineButton);
-        TextView btnDecimalPoint = v.findViewById(R.id.decimalPointButton);
-        TextView btnBackspace = v.findViewById(R.id.backspaceButton);
+        TextView btnPorcentagem = v.findViewById(R.id.Button_porcentagem);
+        TextView btnDivisao = v.findViewById(R.id.Button_divisao);
+        TextView btnMultiplicacao = v.findViewById(R.id.Button_multiplicacao);
+        TextView btnAdicao = v.findViewById(R.id.Button_adicao);
+        TextView btnSubtracao = v.findViewById(R.id.Button_subtracao);
+        TextView btnResultado = v.findViewById(R.id.Button_Resultado);
+        TextView btnParentesesAberto = v.findViewById(R.id.Button_parenteses_aberto);
+        TextView btnParentesesFechado = v.findViewById(R.id.Button_parenteses_fechado);
+        TextView btnApagar = v.findViewById(R.id.Button_apagar);
+        TextView btnPonto = v.findViewById(R.id.Button_ponto);
+        TextView btnZero = v.findViewById(R.id.Button_zero);
+        TextView btnUm = v.findViewById(R.id.Button_um);
+        TextView btnDois = v.findViewById(R.id.Button_dois);
+        TextView btnTres = v.findViewById(R.id.Button_tres);
+        TextView btnQuatro = v.findViewById(R.id.Button_quatro);
+        TextView btnCinco = v.findViewById(R.id.Button_cinco);
+        TextView btnSeis = v.findViewById(R.id.Button_seis);
+        TextView btnSete = v.findViewById(R.id.Button_sete);
+        TextView btnOito = v.findViewById(R.id.Button_oito);
+        TextView btnNove = v.findViewById(R.id.Button_nove);
 
-        //etResult.setText(EvalParser.calculate("(1+3)x5"));
-
-        btnPercent.setOnClickListener(new View.OnClickListener() {
+        btnPorcentagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnPercent.getText());
+                operation.append(btnPorcentagem.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnOpenParenthesis.setOnClickListener(new View.OnClickListener() {
+        btnParentesesAberto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnOpenParenthesis.getText());
+                operation.append(btnParentesesAberto.getText());
                 etResult.setText(operation.toString());
             }
         });
-        btnCloseParenthesis.setOnClickListener(new View.OnClickListener() {
+        btnParentesesFechado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (StringUtils.countMatches(operation.toString(), "(") == StringUtils.countMatches(operation.toString(), ")")) {
                     Toast.makeText(getContext(), "Não é possível fechar parênteses sem abri-lo antes", Toast.LENGTH_SHORT).show();
                 } else {
-                    operation.append(btnCloseParenthesis.getText());
+                    operation.append(btnParentesesFechado.getText());
                     etResult.setText(operation.toString());
                 }
             }
         });
-        btnDivision.setOnClickListener(new View.OnClickListener() {
+        btnDivisao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnDivision.getText());
+                operation.append(btnDivisao.getText());
                 etResult.setText(operation.toString());
             }
         });
-        btnMultiplication.setOnClickListener(new View.OnClickListener() {
+        btnMultiplicacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnMultiplication.getText());
+                operation.append(btnMultiplicacao.getText());
                 etResult.setText(operation.toString());
             }
         });
-        btnSubtraction.setOnClickListener(new View.OnClickListener() {
+        btnSubtracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnSubtraction.getText());
+                operation.append(btnSubtracao.getText());
                 etResult.setText(operation.toString());
             }
         });
-        btnAddition.setOnClickListener(new View.OnClickListener() {
+        btnAdicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnAddition.getText());
+                operation.append(btnAdicao.getText());
                 etResult.setText(operation.toString());
             }
         });
-        btnResult.setOnClickListener(new View.OnClickListener() {
+        btnResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(etResult.length() > 0) {
                 dbHelper = new DatabaseHelper(getActivity());
                 dbHelper.insert(operation.toString(), etOperation.getText().toString());
+                }
                 etResult.setText(etOperation.getText().toString());
                 operation = new StringBuilder();
                 etOperation.setText("");
+            }
+        });
+        btnApagar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(operation.length() > 0) {
+                    operation.deleteCharAt(operation.length()-1);
+                    etResult.setText(operation.toString());
+                }
+                if(operation.length() < 1) {
+                    etOperation.setText("0");
+                }
             }
         });
         btnZero.setOnClickListener(new View.OnClickListener() {
@@ -134,94 +146,86 @@ public class MainFragment extends Fragment {
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnOne.setOnClickListener(new View.OnClickListener() {
+        btnUm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnOne.getText());
+                operation.append(btnUm.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
 
             }
         });
-        btnTwo.setOnClickListener(new View.OnClickListener() {
+        btnDois.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnTwo.getText());
+                operation.append(btnDois.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnThree.setOnClickListener(new View.OnClickListener() {
+        btnTres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnThree.getText());
+                operation.append(btnTres.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnFour.setOnClickListener(new View.OnClickListener() {
+        btnQuatro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnFour.getText());
+                operation.append(btnQuatro.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnFive.setOnClickListener(new View.OnClickListener() {
+        btnCinco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnFive.getText());
+                operation.append(btnCinco.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnSix.setOnClickListener(new View.OnClickListener() {
+        btnSeis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnSix.getText());
+                operation.append(btnSeis.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnSeven.setOnClickListener(new View.OnClickListener() {
+        btnSete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnSeven.getText());
+                operation.append(btnSete.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnEight.setOnClickListener(new View.OnClickListener() {
+        btnOito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnEight.getText());
+                operation.append(btnOito.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnNine.setOnClickListener(new View.OnClickListener() {
+        btnNove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnNine.getText());
+                operation.append(btnNove.getText());
                 etResult.setText(operation.toString());
                 etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
-        btnDecimalPoint.setOnClickListener(new View.OnClickListener() {
+        btnPonto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnDecimalPoint.getText());
+                operation.append(btnPonto.getText());
                 etResult.setText(operation.toString());
             }
         });
-        btnBackspace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operation.deleteCharAt(operation.length()-1);
-                etResult.setText(operation.toString());
-            }
-        });
-
 
         // Inflate the layout for this fragment
         return v;

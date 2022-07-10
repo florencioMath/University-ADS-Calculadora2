@@ -12,7 +12,7 @@
         android:background="@color/white"
         android:orientation="vertical">
         <EditText
-            android:id="@+id/textViewResultDisplay"
+            android:id="@+id/textView_resultado_display"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.1"
@@ -22,7 +22,7 @@
             android:paddingHorizontal="15dp"
             android:gravity="bottom|end"/>
         <EditText
-            android:id="@+id/textViewOperationDisplay"
+            android:id="@+id/textView_expressao_display"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.1"
@@ -38,7 +38,7 @@
             android:layout_weight="0.1"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/percentButton"
+                android:id="@+id/Button_porcentagem"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -50,7 +50,7 @@
                 android:text="%"
                 />
             <Button
-                android:id="@+id/openParenthesisButton"
+                android:id="@+id/Button_parenteses_aberto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -62,7 +62,7 @@
                 android:text="("
                 />
             <Button
-                android:id="@+id/closeParenthesisButton"
+                android:id="@+id/Button_parenteses_fechado"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -74,7 +74,7 @@
                 android:text=")"
                 />
             <Button
-                android:id="@+id/divisionButton"
+                android:id="@+id/Button_divisao"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -92,7 +92,7 @@
             android:layout_weight="0.1"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/sevenButton"
+                android:id="@+id/Button_sete"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -104,7 +104,7 @@
                 android:text="7"
                 />
             <Button
-                android:id="@+id/eightButton"
+                android:id="@+id/Button_oito"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -116,7 +116,7 @@
                 android:text="8"
                 />
             <Button
-                android:id="@+id/nineButton"
+                android:id="@+id/Button_nove"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -128,7 +128,7 @@
                 android:text="9"
                 />
             <Button
-                android:id="@+id/multiplicationButton"
+                android:id="@+id/Button_multiplicacao"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -146,7 +146,7 @@
             android:layout_weight="0.1"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/fourButton"
+                android:id="@+id/Button_quatro"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -158,7 +158,7 @@
                 android:text="4"
                 />
             <Button
-                android:id="@+id/fiveButton"
+                android:id="@+id/Button_cinco"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -170,7 +170,7 @@
                 android:text="5"
                 />
             <Button
-                android:id="@+id/sixButton"
+                android:id="@+id/Button_seis"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -182,7 +182,7 @@
                 android:layout_margin="2dp"
                 />
             <Button
-                android:id="@+id/subtractionButton"
+                android:id="@+id/Button_subtracao"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -200,7 +200,7 @@
             android:layout_weight="0.1"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/oneButton"
+                android:id="@+id/Button_um"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -212,7 +212,7 @@
                 android:text="1"
                 />
             <Button
-                android:id="@+id/twoButton"
+                android:id="@+id/Button_dois"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -224,7 +224,7 @@
                 android:text="2"
                 />
             <Button
-                android:id="@+id/threeButton"
+                android:id="@+id/Button_tres"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -236,7 +236,7 @@
                 android:text="3"
                 />
             <Button
-                android:id="@+id/additionButton"
+                android:id="@+id/Button_adicao"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -254,7 +254,7 @@
             android:layout_weight="0.1"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/zeroButton"
+                android:id="@+id/Button_zero"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -266,7 +266,7 @@
                 android:text="0"
                 />
             <Button
-                android:id="@+id/decimalPointButton"
+                android:id="@+id/Button_ponto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -278,7 +278,7 @@
                 android:text="."
                 />
             <Button
-                android:id="@+id/backspaceButton"
+                android:id="@+id/Button_apagar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -290,7 +290,7 @@
                 android:text="⌫"
                 />
             <Button
-                android:id="@+id/resultButton"
+                android:id="@+id/Button_Resultado"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
