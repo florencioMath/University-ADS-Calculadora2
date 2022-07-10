@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class EvalParser {
+public class Operacoes {
     public static double eval(final String str, Context context, String previousResult) {
         return new Object() {
             int pos = -1, ch;
@@ -27,7 +27,7 @@ public class EvalParser {
                 nextChar();
                 double x = parseExpression();
                 if (pos < str.length()) {
-                    Toast.makeText(context, "Erro na avaliação da expressão", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Erro na expressão.", Toast.LENGTH_SHORT).show();
                     return Double.parseDouble(previousResult);
                 }
                 return x;
@@ -36,8 +36,8 @@ public class EvalParser {
             double parseExpression() {
                 double x = parseTerm();
                 for (;;) {
-                    if      (eat('+')) x += parseTerm(); // addition
-                    else if (eat('-')) x -= parseTerm(); // subtraction
+                    if      (eat('+')) x += parseTerm(); // adição
+                    else if (eat('-')) x -= parseTerm(); // subtração
                     else return x;
                 }
             }
@@ -45,41 +45,41 @@ public class EvalParser {
             double parseTerm() {
                 double x = parseFactor();
                 for (;;) {
-                    if      (eat('x')) x *= parseFactor(); // multiplication
-                    else if (eat('÷')) x /= parseFactor(); // division
+                    if      (eat('x')) x *= parseFactor(); // multiplicação
+                    else if (eat('÷')) x /= parseFactor(); // divisão
                     else return x;
                 }
             }
 
             double parseFactor() {
-                if (eat('+')) return +parseFactor(); // unary plus
-                if (eat('-')) return -parseFactor(); // unary minus
+                if (eat('+')) return +parseFactor(); // unário mais
+                if (eat('-')) return -parseFactor(); // unário menos
 
                 double x;
                 int startPos = this.pos;
-                if (eat('(')) { // parentheses
+                if (eat('(')) { // parênteses
                     x = parseExpression();
                     if (!eat(')')) {
-                        Toast.makeText(context, "Erro na avaliação da expressão", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Erro na expressão.", Toast.LENGTH_SHORT).show();
                         return Double.parseDouble(previousResult);
                     }
-                } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
+                } else if ((ch >= '0' && ch <= '9') || ch == '.') { // números
                     while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
                     x = Double.parseDouble(str.substring(startPos, this.pos));
-                } else if (ch >= 'a' && ch <= 'z') { // functions
+                } else if (ch >= 'a' && ch <= 'z') { // funções
                     while (ch >= 'a' && ch <= 'z') nextChar();
                     String func = str.substring(startPos, this.pos);
                     if (eat('(')) {
                         x = parseExpression();
                         if (!eat(')')) {
-                            Toast.makeText(context, "Erro na avaliação da expressão", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Erro na expressão.", Toast.LENGTH_SHORT).show();
                             return Double.parseDouble(previousResult);
                         }
                     } else {
                         x = parseFactor();
                     }
                 } else {
-                    Toast.makeText(context, "Erro na avaliação da expressão", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Erro na avaliação da expressão.", Toast.LENGTH_SHORT).show();
                     return Double.parseDouble(previousResult) ;
                 }
 
@@ -90,14 +90,14 @@ public class EvalParser {
 
     public static String calculate(String expression, Context context, String previousResult){
         String strResult;
-        //tratamento para calcular a expressão mesmo se ela não tiver fechado os parênteses
+        // calcula a expressão sem ter fechado os parênteses
         int countOpenParenthesis = StringUtils.countMatches(expression, "(");
         int countCloseParenthesis = StringUtils.countMatches(expression, ")");
         if (countOpenParenthesis > countCloseParenthesis) {
             expression = expression + ")";
         }
 
-        if (StringUtils.countMatches(expression, "%") > 0){
+        if (StringUtils.countMatches(expression, "%") > 0){ // porcentagem
             int indexPercent = expression.indexOf("%");
             if (indexPercent == expression.length()-1){
                 String substrExpression = expression.substring(0, indexPercent);
@@ -116,11 +116,11 @@ public class EvalParser {
 
         double result = eval(expression, context, previousResult);
 
-        //tratamento para considerar o tamanho do display (máximo de 11 números)
+        // tratamento para o display de 11 digitos máximos
         if ((result*10)/10 == Double.parseDouble(Long.toString(Math.round(result)))) {
             strResult = Long.toString(Math.round(result));
             if (strResult.length() > 11)
-                Toast.makeText(context, "Número maior que a capacidade de exibição da calculadora.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Digite um número de até 11 digitos..", Toast.LENGTH_SHORT).show();
         } else {
             strResult = Double.toString(result);
         }
