@@ -23,10 +23,7 @@ public class MainFragment extends Fragment {
     private StringBuilder operation = new StringBuilder();
     private DatabaseHelper dbHelper;
 
-
-    public MainFragment() {
-        // Required empty public constructor
-    }
+    public MainFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,14 +59,19 @@ public class MainFragment extends Fragment {
         TextView btnOito = v.findViewById(R.id.Button_oito);
         TextView btnNove = v.findViewById(R.id.Button_nove);
 
+        // Porcentagem
         btnPorcentagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                operation.append(btnPorcentagem.getText());
-                etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                if(etOperation.length() != 0) {
+                    operation.append(btnPorcentagem.getText());
+                    etResult.setText(operation.toString());
+                    etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                 }
             }
         });
+
+        // Parênteses aberto
         btnParentesesAberto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,8 @@ public class MainFragment extends Fragment {
                 etResult.setText(operation.toString());
             }
         });
+
+        // Parênteses fechado
         btnParentesesFechado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +92,8 @@ public class MainFragment extends Fragment {
                 }
             }
         });
+
+        // Divisão
         btnDivisao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +101,8 @@ public class MainFragment extends Fragment {
                 etResult.setText(operation.toString());
             }
         });
+
+        // Multiplicação
         btnMultiplicacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +110,8 @@ public class MainFragment extends Fragment {
                 etResult.setText(operation.toString());
             }
         });
+
+        // Subtração
         btnSubtracao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +119,8 @@ public class MainFragment extends Fragment {
                 etResult.setText(operation.toString());
             }
         });
+
+        // Adição
         btnAdicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,18 +128,22 @@ public class MainFragment extends Fragment {
                 etResult.setText(operation.toString());
             }
         });
+
+        // Resultado
         btnResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etResult.length() > 0) {
-                dbHelper = new DatabaseHelper(getActivity());
-                dbHelper.insert(operation.toString(), etOperation.getText().toString());
+                if(etResult.length() > 0 && etOperation.length() > 0) {
+                    dbHelper = new DatabaseHelper(getActivity());
+                    dbHelper.insert(operation.toString(), etOperation.getText().toString());
                 }
                 etResult.setText(etOperation.getText().toString());
                 operation = new StringBuilder();
                 etOperation.setText("");
             }
         });
+
+        // Apagar
         btnApagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,12 +156,15 @@ public class MainFragment extends Fragment {
                 }
             }
         });
+
+
+        /* Ínicio dos botões do teclado */
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 operation.append(btnZero.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnUm.setOnClickListener(new View.OnClickListener() {
@@ -153,7 +172,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnUm.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
 
             }
         });
@@ -162,7 +181,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnDois.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnTres.setOnClickListener(new View.OnClickListener() {
@@ -170,7 +189,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnTres.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnQuatro.setOnClickListener(new View.OnClickListener() {
@@ -178,7 +197,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnQuatro.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnCinco.setOnClickListener(new View.OnClickListener() {
@@ -186,7 +205,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnCinco.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnSeis.setOnClickListener(new View.OnClickListener() {
@@ -194,7 +213,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnSeis.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnSete.setOnClickListener(new View.OnClickListener() {
@@ -202,7 +221,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnSete.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnOito.setOnClickListener(new View.OnClickListener() {
@@ -210,7 +229,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnOito.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnNove.setOnClickListener(new View.OnClickListener() {
@@ -218,7 +237,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 operation.append(btnNove.getText());
                 etResult.setText(operation.toString());
-                etOperation.setText(EvalParser.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
+                etOperation.setText(Operacoes.calculate(operation.toString(), getContext(), etOperation.getText().toString()));
             }
         });
         btnPonto.setOnClickListener(new View.OnClickListener() {
@@ -228,8 +247,8 @@ public class MainFragment extends Fragment {
                 etResult.setText(operation.toString());
             }
         });
+        /* Fim dos botões do teclado */
 
-        // Inflate the layout for this fragment
         return v;
     }
 }
