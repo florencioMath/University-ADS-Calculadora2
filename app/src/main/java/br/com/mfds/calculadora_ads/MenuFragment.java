@@ -41,17 +41,17 @@ public class MenuFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()) {
-          case R.id.menu_historico:
-            Toast.makeText(getActivity(), "Histórico", Toast.LENGTH_LONG).show();
-             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainFragment()).commit();
-            break;
-        };
-        switch (item.getItemId()) {
             case R.id.menu_calculadora:
-                Toast.makeText(getActivity(), "Calculadora", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Calculadora", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this.getActivity(), MainActivity.class);
                 this.startActivity(intent);
                 break;
+        };
+        switch (item.getItemId()) {
+          case R.id.menu_historico:
+            Toast.makeText(getActivity(), "Histórico", Toast.LENGTH_SHORT).show();
+             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainFragment()).commit();
+            break;
         };
     return super.onOptionsItemSelected(item);
     }
